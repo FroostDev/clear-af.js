@@ -2,6 +2,8 @@
 
 Un package JavaScript rempli d'utilitaires pour rendre votre code **lisible af**. Parce que la clarté, c'est la clé de la survie en programmation.
 
+> **Le projet est encore en cours de developpement, la plupart des fonctions listées dans la présentation ne sont pas encore disponible et le package NPM n'est pas encore installable.**
+
 ---
  
 ## 📦 Installation
