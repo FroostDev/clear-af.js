@@ -1,4 +1,5 @@
 # clear-af.js
+[![npm version](https://badge.fury.io/js/clear-af.js.svg)](https://www.npmjs.com/package/clear-af.js)
 
 A JavaScript package packed with utilities to make your code **readable af**. Because clarity is the key to survival in programming.
 
