@@ -7,6 +7,25 @@
 
 Made by FroostDev | https://github.com/FroostDev - MIT Licence
 */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getDate = getDate;
+exports.prettyError = prettyError;
+exports.prettyWarn = prettyWarn;
+exports.prettySuccess = prettySuccess;
+exports.prettyInfo = prettyInfo;
+exports.prettyDebug = prettyDebug;
+exports.logSeparator = logSeparator;
+exports.logHeader = logHeader;
+exports.isEmpty = isEmpty;
+exports.isType = isType;
+exports.isEmail = isEmail;
+exports.isURL = isURL;
+exports.deepClone = deepClone;
+exports.noTwins = noTwins;
+exports.camelify = camelify;
+exports.kebabify = kebabify;
+exports.snakify = snakify;
+exports.capitalize = capitalize;
 /**
  * =======================
  * Functions for utilities

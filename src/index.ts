@@ -27,6 +27,12 @@ function getDate(time: boolean = false): string {
  * @function prettyError
  * @param err - Error message to display
  * @param time - Include or not a timestamp
+ * @example
+ * prettyError("Database connection failed");
+ * // Output: ✕ - Database connection failed (in red)
+ * 
+ * prettyError("Critical error", true);
+ * // Output: ✕ [30/03/2026 10:30:45] - Critical error (in red with timestamp)
  */
 function prettyError(err: string, time = false): void {
     const date = getDate(time);
@@ -38,6 +44,12 @@ function prettyError(err: string, time = false): void {
  * @function prettyWarn
  * @param warn - Warning message to display
  * @param time - Include or not a timestamp
+ * @example
+ * prettyWarn("Deprecated function used");
+ * // Output: ⚠ - Deprecated function used (in orange)
+ * 
+ * prettyWarn("Low memory", true);
+ * // Output: ⚠ [30/03/2026 10:30:45] - Low memory (in orange with timestamp)
  */
 function prettyWarn(warn: string, time = false): void {
     const date = getDate(time);
@@ -49,6 +61,12 @@ function prettyWarn(warn: string, time = false): void {
  * @function prettySuccess
  * @param success - Success message to display
  * @param time - Include or not a timestamp
+ * @example
+ * prettySuccess("User created successfully");
+ * // Output: ✔ - User created successfully (in green)
+ * 
+ * prettySuccess("Data saved", true);
+ * // Output: ✔ [30/03/2026 10:30:45] - Data saved (in green with timestamp)
  */
 function prettySuccess(success: string, time = false): void {
     const date = getDate(time);
@@ -60,6 +78,12 @@ function prettySuccess(success: string, time = false): void {
  * @function prettyInfo
  * @param info - Information message to display
  * @param time - Include or not a timestamp
+ * @example
+ * prettyInfo("Server is running on port 3000");
+ * // Output: ℹ - Server is running on port 3000 (in blue)
+ * 
+ * prettyInfo("Cache cleared", true);
+ * // Output: ℹ [30/03/2026 10:30:45] - Cache cleared (in blue with timestamp)
  */
 function prettyInfo(info: string, time = false): void {
     const date = getDate(time);
@@ -71,6 +95,12 @@ function prettyInfo(info: string, time = false): void {
  * @function prettyDebug
  * @param debug - Debug message to display
  * @param time - Include or not a timestamp
+ * @example
+ * prettyDebug("Variable x = 42");
+ * // Output: ⚙ - Variable x = 42 (in white)
+ * 
+ * prettyDebug("Function call trace", true);
+ * // Output: ⚙ [30/03/2026 10:30:45] - Function call trace (in white with timestamp)
  */
 function prettyDebug(debug: string, time = false): void {
     const date = getDate(time);
@@ -80,6 +110,9 @@ function prettyDebug(debug: string, time = false): void {
 /**
  * Show a separator line in console
  * @function logSeparator
+ * @example
+ * logSeparator();
+ * // Output: ══════════════════════════════════════════════════
  */
 function logSeparator(): void {
     console.log(`\x1b[1m${'═'.repeat(50)}\x1b[0m`);
@@ -89,6 +122,12 @@ function logSeparator(): void {
  * Display a header with a title in the center
  * @function logHeader
  * @param title - The title of the header
+ * @example
+ * logHeader("Welcome");
+ * // Output:
+ * // ╔═════════╗
+ * // ║ Welcome ║
+ * // ╚═════════╝
  */
 function logHeader(title: string): void {
     console.log(`\x1b[1m╔${'═'.repeat(title.length + 2)}╗\x1b[0m`);
@@ -107,6 +146,14 @@ function logHeader(title: string): void {
  * @function isEmpty
  * @param value - The variable to check
  * @returns {boolean} True if the value is empty, false otherwise
+ * @example
+ * isEmpty("");          // true
+ * isEmpty("   ");       // true
+ * isEmpty(null);        // true
+ * isEmpty([]);          // true
+ * isEmpty({});          // true
+ * isEmpty("hello");     // false
+ * isEmpty([1, 2]);      // false
  */
 function isEmpty(value: unknown): boolean {
     if (value === null || value === undefined) return true;
@@ -122,6 +169,11 @@ function isEmpty(value: unknown): boolean {
  * @param value - The variable to check
  * @param type - The type you want
  * @returns {boolean} True if the value is of the chosen type, false otherwise
+ * @example
+ * isType("hello", "string");    // true
+ * isType(42, "number");         // true
+ * isType([], "object");         // true
+ * isType("42", "number");       // false
  */
 function isType(value: unknown, type: string): boolean {
     return typeof value === type;
@@ -132,6 +184,11 @@ function isType(value: unknown, type: string): boolean {
  * @function isEmail
  * @param email - The email to check
  * @returns {boolean} True if the email is valid, false otherwise
+ * @example
+ * isEmail("alice@example.com");      // true
+ * isEmail("bob.smith@company.co.uk"); // true
+ * isEmail("invalid@.com");           // false
+ * isEmail("no-at-sign.com");         // false
  */
 function isEmail(email: string): boolean {
     const regex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -143,6 +200,11 @@ function isEmail(email: string): boolean {
  * @function isURL
  * @param url - The URL to check
  * @returns {boolean} True if the URL is valid, false otherwise
+ * @example
+ * isURL("https://www.example.com");     // true
+ * isURL("http://example.com/path");     // true
+ * isURL("www.example.com");             // false (missing protocol)
+ * isURL("not a url");                   // false
  */
 function isURL(url: string): boolean {
     try {
@@ -164,6 +226,13 @@ function isURL(url: string): boolean {
  * @function deepClone
  * @param obj - The object or array to clone
  * @returns A deep clone of the object
+ * @example
+ * const user = { name: "Alice", skills: ["JS", "TS"] };
+ * const clone = deepClone(user);
+ * clone.name = "Bob";
+ * clone.skills[0] = "Python";
+ * console.log(user.name);    // "Alice" (unchanged)
+ * console.log(user.skills[0]); // "JS" (unchanged)
  */
 function deepClone<T>(obj: T): T {
     if (obj === null || typeof obj !== "object") return obj;
@@ -182,6 +251,10 @@ function deepClone<T>(obj: T): T {
  * @function noTwins
  * @param arr - The array to remove duplicates from
  * @returns {unknown[]} A new array with unique values only
+ * @example
+ * noTwins([1, 2, 2, 3, 3, 3]);        // [1, 2, 3]
+ * noTwins(["a", "b", "a", "c"]);      // ["a", "b", "c"]
+ * noTwins([1, "1", 1, "1"]);          // [1, "1"]
  */
 function noTwins(arr: unknown[]): unknown[] {
     return Array.from(new Set(arr));
@@ -198,6 +271,10 @@ function noTwins(arr: unknown[]): unknown[] {
  * @function camelify
  * @param str - The string to transform
  * @returns {string} The string in camelCase format
+ * @example
+ * camelify("hello world");       // "helloWorld"
+ * camelify("C'est un test");     // "cestUnTest"
+ * camelify("foo bar baz");       // "fooBarBaz"
  */
 function camelify(str: string): string {
     let camelCased: string = "";
@@ -219,6 +296,10 @@ function camelify(str: string): string {
  * @function kebabify
  * @param str - The string to transform
  * @returns {string} The string in kebab-case format
+ * @example
+ * kebabify("hello world");       // "hello-world"
+ * kebabify("C'est un test");     // "ceststun-test"
+ * kebabify("foo bar baz");       // "foo-bar-baz"
  */
 function kebabify(str: string): string {
     let kebabised: string = "";
@@ -236,6 +317,10 @@ function kebabify(str: string): string {
  * @function snakify
  * @param str - The string to transform
  * @returns {string} The string in snake_case format
+ * @example
+ * snakify("hello world");        // "hello_world"
+ * snakify("C'est un test");      // "ceststun_test"
+ * snakify("foo bar baz");        // "foo_bar_baz"
  */
 function snakify(str: string): string {
     let snaked: string = "";
@@ -253,6 +338,10 @@ function snakify(str: string): string {
  * @function capitalize
  * @param str - The string to capitalize
  * @returns {string} The string with the first character in uppercase
+ * @example
+ * capitalize("hello");        // "Hello"
+ * capitalize("hello world");  // "Hello world"
+ * capitalize("");             // ""
  */
 function capitalize(str: string): string {
     if (isEmpty(str)) return str;

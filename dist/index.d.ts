@@ -136,4 +136,5 @@ declare function snakify(str: string): string;
  * @returns {string} The string with the first character in uppercase
  */
 declare function capitalize(str: string): string;
+export { getDate, prettyError, prettyWarn, prettySuccess, prettyInfo, prettyDebug, logSeparator, logHeader, isEmpty, isType, isEmail, isURL, deepClone, noTwins, camelify, kebabify, snakify, capitalize };
 //# sourceMappingURL=index.d.ts.map
