@@ -1,4 +1,8 @@
 /**
+ * @category Object Manipulation
+ */
+
+/**
  * Create a deep clone of any object or array
  * @category Object Manipulation
  * @function deepClone

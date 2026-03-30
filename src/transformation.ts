@@ -1,3 +1,7 @@
+/**
+ * @category Transformation
+ */
+
 import { isEmpty } from './validation';
 
 /**

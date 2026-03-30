@@ -1,4 +1,8 @@
 /**
+ * @category Validation
+ */
+
+/**
  * Check if any type of variable is empty
  * @category Validation
  * @function isEmpty

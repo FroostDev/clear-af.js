@@ -1,4 +1,8 @@
 /**
+ * @category Logging
+ */
+
+/**
  * Helper function to get formatted date
  * @internal
  */
@@ -126,4 +130,4 @@ function logHeader(title: string): void {
     console.log(`\x1b[1m╚${'═'.repeat(title.length + 2)}╝\x1b[0m`);
 }
 
-export {prettyError, prettyWarn, prettySuccess, prettyInfo, prettyDebug, logSeparator, logHeader};
+export { prettyError, prettyWarn, prettySuccess, prettyInfo, prettyDebug, logSeparator, logHeader };
