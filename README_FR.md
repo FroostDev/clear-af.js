@@ -1,8 +1,8 @@
 # clear-af.js
 
-A JavaScript package packed with utilities to make your code **readable af**. Because clarity is the key to survival in programming.
+Un package JavaScript rempli d'utilitaires pour rendre votre code **lisible af**. Parce que la clarté, c'est la clé de la survie en programmation.
 
-📖 **Languages** : [🇬🇧 English](#) | [🇫🇷 Français](README_FR.md)
+📖 **Languages** : [🇬🇧 English](README.md) | [🇫🇷 Français](#)
 
 ---
 
@@ -13,44 +13,44 @@ npm install clear-af
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Utilisation rapide
 ```javascript
 const clear = require('clear-af');
 
-clear.prettyError("An error!");
+clear.prettyError("Une erreur !");
 clear.camelify("hello world"); // "helloWorld"
 clear.isEmpty(data);
 ```
 
 ---
 
-## ✨ Features
+## ✨ Fonctionnalités
 
-### 🔍 Improved Logging
-Colored and formatted messages for better debugging.
+### 🔍 Logging amélioré
+Messages colorés et formatés pour un meilleur debugging.
 ```javascript
 clear.prettyError(error);
 clear.prettySuccess(message);
 clear.prettyWarn(warning);
 ```
 
-### ✅ Easy Validation
-Verify your data quickly.
+### ✅ Validation facile
+Vérifiez vos données rapidement.
 ```javascript
 clear.isEmpty(value);
 clear.isEmail("test@example.com");
 clear.isURL("https://example.com");
 ```
 
-### 🔄 Object Manipulation
-Deep clone and manipulate your data.
+### 🔄 Manipulation d'objets
+Clonez profondément et manipulez vos données.
 ```javascript
 clear.deepClone(obj);
 clear.noTwins([1, 2, 2, 3]); // [1, 2, 3]
 ```
 
-### 📝 String Transformation
-Convert your strings to different formats.
+### 📝 Transformation de strings
+Convertissez vos strings en différents formats.
 ```javascript
 clear.camelify("hello world");   // "helloWorld"
 clear.kebabify("hello world");   // "hello-world"
@@ -60,7 +60,7 @@ clear.capitalize("hello");       // "Hello"
 
 ---
 
-## 📚 Complete API
+## 📚 API Complète
 
 ### Logging
 - `prettyError(message, showTime?)`
@@ -77,11 +77,11 @@ clear.capitalize("hello");       // "Hello"
 - `isEmail(email)`
 - `isURL(url)`
 
-### Objects & Arrays
+### Objets & Arrays
 - `deepClone(obj)`
 - `noTwins(array)`
 
-### String Transformation
+### Transformation de strings
 - `camelify(string)`
 - `kebabify(string)`
 - `snakify(string)`
@@ -91,26 +91,26 @@ clear.capitalize("hello");       // "Hello"
 
 ## 🤔 FAQ
 
-**Q: Why "-af" in the name?**  
-A: Because your code should be readable *af*, mate.
+**Q: Pourquoi "-af" dans le nom ?**  
+R: Parce que ton code doit être lisible *af*, mec.
 
-**Q: Is it compatible with TypeScript?**  
-A: Yes! TypeScript types are included.
+**Q: Compatible avec TypeScript ?**  
+R: Oui ! Les types TypeScript sont inclus.
 
-**Q: Will it slow down my app?**  
-A: No, zero overhead. These are just helpers.
-
----
-
-## 📝 License
-
-MIT - Free to use as you see fit.
+**Q: Ça ralentit mon app ?**  
+R: Non, zéro overhead. Ce ne sont que des helpers.
 
 ---
 
-## 🤝 Contributing
+## 📝 Licence
 
-Contributions are welcome!
+MIT - Libre de l'utiliser comme bon vous semble.
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont bienvenues !
 ```bash
 git clone https://github.com/FroostDev/clear-af.js
 cd clear-af.js
@@ -120,4 +120,4 @@ npm run build
 
 ---
 
-**clear-af.js** - *Because clarity is the developer's mental health.* 🖤
+**clear-af.js** - *Parce que la clarté, c'est la santé mentale du dev.* 🖤
