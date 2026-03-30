@@ -258,3 +258,27 @@ function capitalize(str: string): string {
     if (isEmpty(str)) return str;
     return str[0].toUpperCase() + str.slice(1);
 }
+
+// =======
+// Exports
+// =======
+export {
+    getDate,
+    prettyError,
+    prettyWarn,
+    prettySuccess,
+    prettyInfo,
+    prettyDebug,
+    logSeparator,
+    logHeader,
+    isEmpty,
+    isType,
+    isEmail,
+    isURL,
+    deepClone,
+    noTwins,
+    camelify,
+    kebabify,
+    snakify,
+    capitalize
+};
