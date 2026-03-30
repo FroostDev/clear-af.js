@@ -1,3 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isEmpty = isEmpty;
+exports.isType = isType;
+exports.isEmail = isEmail;
+exports.isURL = isURL;
 /**
  * Check if any type of variable is empty
  * @category Validation
@@ -13,14 +19,17 @@
  * isEmpty("hello");     // false
  * isEmpty([1, 2]);      // false
  */
-function isEmpty(value: unknown): boolean {
-    if (value === null || value === undefined) return true;
-    if (typeof value === "string") return value.trim().length === 0;
-    if (Array.isArray(value)) return value.length === 0;
-    if (typeof value === "object") return Object.keys(value).length === 0;
+function isEmpty(value) {
+    if (value === null || value === undefined)
+        return true;
+    if (typeof value === "string")
+        return value.trim().length === 0;
+    if (Array.isArray(value))
+        return value.length === 0;
+    if (typeof value === "object")
+        return Object.keys(value).length === 0;
     return false;
 }
-
 /**
  * Check if the variable is of the chosen type
  * @category Validation
@@ -34,10 +43,9 @@ function isEmpty(value: unknown): boolean {
  * isType([], "object");         // true
  * isType("42", "number");       // false
  */
-function isType(value: unknown, type: string): boolean {
+function isType(value, type) {
     return typeof value === type;
 }
-
 /**
  * Check if an email is valid
  * @category Validation
@@ -50,11 +58,10 @@ function isType(value: unknown, type: string): boolean {
  * isEmail("invalid@.com");           // false
  * isEmail("no-at-sign.com");         // false
  */
-function isEmail(email: string): boolean {
+function isEmail(email) {
     const regex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
 }
-
 /**
  * Check if a URL is valid
  * @category Validation
@@ -67,13 +74,12 @@ function isEmail(email: string): boolean {
  * isURL("www.example.com");             // false (missing protocol)
  * isURL("not a url");                   // false
  */
-function isURL(url: string): boolean {
+function isURL(url) {
     try {
         new URL(url);
         return true;
-    } catch (error) {
+    }
+    catch (error) {
         return false;
     }
 }
-
-export {isEmpty, isType, isEmail, isURL};

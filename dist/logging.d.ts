@@ -1,12 +1,4 @@
 /**
- * Helper function to get formatted date
- * @internal
- */
-function getDate(time: boolean = false): string {
-    return time ? `[${new Date().toLocaleString()}]` : '';
-}
-
-/**
  * Show a pretty error log message with optional date information
  * @category Logging
  * @function prettyError
@@ -15,15 +7,11 @@ function getDate(time: boolean = false): string {
  * @example
  * prettyError("Database connection failed");
  * // Output: ✕ - Database connection failed (in red)
- * 
+ *
  * prettyError("Critical error", true);
  * // Output: ✕ [30/03/2026 10:30:45] - Critical error (in red with timestamp)
  */
-function prettyError(err: string, time = false): void {
-    const date = getDate(time);
-    console.log(`\x1b[1;41m ✕ ${date} - ${err} \x1b[0m`);
-}
-
+declare function prettyError(err: string, time?: boolean): void;
 /**
  * Show a pretty warn log message with optional date information
  * @category Logging
@@ -33,15 +21,11 @@ function prettyError(err: string, time = false): void {
  * @example
  * prettyWarn("Deprecated function used");
  * // Output: ⚠ - Deprecated function used (in orange)
- * 
+ *
  * prettyWarn("Low memory", true);
  * // Output: ⚠ [30/03/2026 10:30:45] - Low memory (in orange with timestamp)
  */
-function prettyWarn(warn: string, time = false): void {
-    const date = getDate(time);
-    console.log(`\x1b[1;43m ⚠ ${date} - ${warn} \x1b[0m`);
-}
-
+declare function prettyWarn(warn: string, time?: boolean): void;
 /**
  * Show a pretty success log message with optional date information
  * @category Logging
@@ -51,15 +35,11 @@ function prettyWarn(warn: string, time = false): void {
  * @example
  * prettySuccess("User created successfully");
  * // Output: ✔ - User created successfully (in green)
- * 
+ *
  * prettySuccess("Data saved", true);
  * // Output: ✔ [30/03/2026 10:30:45] - Data saved (in green with timestamp)
  */
-function prettySuccess(success: string, time = false): void {
-    const date = getDate(time);
-    console.log(`\x1b[1;42m ✔ ${date} - ${success} \x1b[0m`);
-}
-
+declare function prettySuccess(success: string, time?: boolean): void;
 /**
  * Show a pretty information log message with optional date information
  * @category Logging
@@ -69,15 +49,11 @@ function prettySuccess(success: string, time = false): void {
  * @example
  * prettyInfo("Server is running on port 3000");
  * // Output: ℹ - Server is running on port 3000 (in blue)
- * 
+ *
  * prettyInfo("Cache cleared", true);
  * // Output: ℹ [30/03/2026 10:30:45] - Cache cleared (in blue with timestamp)
  */
-function prettyInfo(info: string, time = false): void {
-    const date = getDate(time);
-    console.log(`\x1b[1;44m ℹ ${date} - ${info} \x1b[0m`);
-}
-
+declare function prettyInfo(info: string, time?: boolean): void;
 /**
  * Show a pretty debug log message with optional date information
  * @category Logging
@@ -87,15 +63,11 @@ function prettyInfo(info: string, time = false): void {
  * @example
  * prettyDebug("Variable x = 42");
  * // Output: ⚙ - Variable x = 42 (in white)
- * 
+ *
  * prettyDebug("Function call trace", true);
  * // Output: ⚙ [30/03/2026 10:30:45] - Function call trace (in white with timestamp)
  */
-function prettyDebug(debug: string, time = false): void {
-    const date = getDate(time);
-    console.log(`\x1b[1;97m ⚙ ${date} - ${debug} \x1b[0m`);
-}
-
+declare function prettyDebug(debug: string, time?: boolean): void;
 /**
  * Show a separator line in console
  * @category Logging
@@ -104,10 +76,7 @@ function prettyDebug(debug: string, time = false): void {
  * logSeparator();
  * // Output: ══════════════════════════════════════════════════
  */
-function logSeparator(): void {
-    console.log(`\x1b[1m${'═'.repeat(50)}\x1b[0m`);
-}
-
+declare function logSeparator(): void;
 /**
  * Display a header with a title in the center
  * @category Logging
@@ -120,10 +89,6 @@ function logSeparator(): void {
  * // ║ Welcome ║
  * // ╚═════════╝
  */
-function logHeader(title: string): void {
-    console.log(`\x1b[1m╔${'═'.repeat(title.length + 2)}╗\x1b[0m`);
-    console.log(`\x1b[1m║ ${title} ║\x1b[0m`);
-    console.log(`\x1b[1m╚${'═'.repeat(title.length + 2)}╝\x1b[0m`);
-}
-
+declare function logHeader(title: string): void;
 export { prettyError, prettyWarn, prettySuccess, prettyInfo, prettyDebug, logSeparator, logHeader };
+//# sourceMappingURL=logging.d.ts.map

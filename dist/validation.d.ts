@@ -13,14 +13,7 @@
  * isEmpty("hello");     // false
  * isEmpty([1, 2]);      // false
  */
-function isEmpty(value: unknown): boolean {
-    if (value === null || value === undefined) return true;
-    if (typeof value === "string") return value.trim().length === 0;
-    if (Array.isArray(value)) return value.length === 0;
-    if (typeof value === "object") return Object.keys(value).length === 0;
-    return false;
-}
-
+declare function isEmpty(value: unknown): boolean;
 /**
  * Check if the variable is of the chosen type
  * @category Validation
@@ -34,10 +27,7 @@ function isEmpty(value: unknown): boolean {
  * isType([], "object");         // true
  * isType("42", "number");       // false
  */
-function isType(value: unknown, type: string): boolean {
-    return typeof value === type;
-}
-
+declare function isType(value: unknown, type: string): boolean;
 /**
  * Check if an email is valid
  * @category Validation
@@ -50,11 +40,7 @@ function isType(value: unknown, type: string): boolean {
  * isEmail("invalid@.com");           // false
  * isEmail("no-at-sign.com");         // false
  */
-function isEmail(email: string): boolean {
-    const regex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-}
-
+declare function isEmail(email: string): boolean;
 /**
  * Check if a URL is valid
  * @category Validation
@@ -67,13 +53,6 @@ function isEmail(email: string): boolean {
  * isURL("www.example.com");             // false (missing protocol)
  * isURL("not a url");                   // false
  */
-function isURL(url: string): boolean {
-    try {
-        new URL(url);
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
-
-export {isEmpty, isType, isEmail, isURL};
+declare function isURL(url: string): boolean;
+export { isEmpty, isType, isEmail, isURL };
+//# sourceMappingURL=validation.d.ts.map

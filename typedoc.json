@@ -1,0 +1,10 @@
+{
+    "entryPoints": [
+        "src/index.ts"
+    ],
+    "out": "docs",
+    "readme": "src/index.md",
+    "excludePrivate": true,
+    "excludeInternal": true,
+    "name": "clear-af.js"
+}

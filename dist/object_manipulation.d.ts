@@ -12,18 +12,7 @@
  * console.log(user.name);    // "Alice" (unchanged)
  * console.log(user.skills[0]); // "JS" (unchanged)
  */
-function deepClone<T>(obj: T): T {
-    if (obj === null || typeof obj !== "object") return obj;
-
-    if (Array.isArray(obj)) return obj.map(item => deepClone(item)) as T;
-
-    const cloned = {} as T;
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) cloned[key] = deepClone(obj[key]);
-    }
-    return cloned;
-}
-
+declare function deepClone<T>(obj: T): T;
 /**
  * Remove duplicate values from an array
  * @category Object Manipulation
@@ -35,8 +24,6 @@ function deepClone<T>(obj: T): T {
  * noTwins(["a", "b", "a", "c"]);      // ["a", "b", "c"]
  * noTwins([1, "1", 1, "1"]);          // [1, "1"]
  */
-function noTwins(arr: unknown[]): unknown[] {
-    return Array.from(new Set(arr));
-}
-
-export {deepClone, noTwins};
+declare function noTwins(arr: unknown[]): unknown[];
+export { deepClone, noTwins };
+//# sourceMappingURL=object_manipulation.d.ts.map

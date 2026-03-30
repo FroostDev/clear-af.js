@@ -1,3 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.deepClone = deepClone;
+exports.noTwins = noTwins;
 /**
  * Create a deep clone of any object or array
  * @category Object Manipulation
@@ -12,18 +16,18 @@
  * console.log(user.name);    // "Alice" (unchanged)
  * console.log(user.skills[0]); // "JS" (unchanged)
  */
-function deepClone<T>(obj: T): T {
-    if (obj === null || typeof obj !== "object") return obj;
-
-    if (Array.isArray(obj)) return obj.map(item => deepClone(item)) as T;
-
-    const cloned = {} as T;
+function deepClone(obj) {
+    if (obj === null || typeof obj !== "object")
+        return obj;
+    if (Array.isArray(obj))
+        return obj.map(item => deepClone(item));
+    const cloned = {};
     for (const key in obj) {
-        if (obj.hasOwnProperty(key)) cloned[key] = deepClone(obj[key]);
+        if (obj.hasOwnProperty(key))
+            cloned[key] = deepClone(obj[key]);
     }
     return cloned;
 }
-
 /**
  * Remove duplicate values from an array
  * @category Object Manipulation
@@ -35,8 +39,6 @@ function deepClone<T>(obj: T): T {
  * noTwins(["a", "b", "a", "c"]);      // ["a", "b", "c"]
  * noTwins([1, "1", 1, "1"]);          // [1, "1"]
  */
-function noTwins(arr: unknown[]): unknown[] {
+function noTwins(arr) {
     return Array.from(new Set(arr));
 }
-
-export {deepClone, noTwins};
