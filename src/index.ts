@@ -24,6 +24,7 @@ function getDate(time: boolean = false): string {
 
 /**
  * Show a pretty error log message with optional date information
+ * @category Logging
  * @function prettyError
  * @param err - Error message to display
  * @param time - Include or not a timestamp
@@ -41,6 +42,7 @@ function prettyError(err: string, time = false): void {
 
 /**
  * Show a pretty warn log message with optional date information
+ * @category Logging
  * @function prettyWarn
  * @param warn - Warning message to display
  * @param time - Include or not a timestamp
@@ -58,6 +60,7 @@ function prettyWarn(warn: string, time = false): void {
 
 /**
  * Show a pretty success log message with optional date information
+ * @category Logging
  * @function prettySuccess
  * @param success - Success message to display
  * @param time - Include or not a timestamp
@@ -75,6 +78,7 @@ function prettySuccess(success: string, time = false): void {
 
 /**
  * Show a pretty information log message with optional date information
+ * @category Logging
  * @function prettyInfo
  * @param info - Information message to display
  * @param time - Include or not a timestamp
@@ -92,6 +96,7 @@ function prettyInfo(info: string, time = false): void {
 
 /**
  * Show a pretty debug log message with optional date information
+ * @category Logging
  * @function prettyDebug
  * @param debug - Debug message to display
  * @param time - Include or not a timestamp
@@ -109,6 +114,7 @@ function prettyDebug(debug: string, time = false): void {
 
 /**
  * Show a separator line in console
+ * @category Logging
  * @function logSeparator
  * @example
  * logSeparator();
@@ -120,6 +126,7 @@ function logSeparator(): void {
 
 /**
  * Display a header with a title in the center
+ * @category Logging
  * @function logHeader
  * @param title - The title of the header
  * @example
@@ -143,6 +150,7 @@ function logHeader(title: string): void {
 
 /**
  * Check if any type of variable is empty
+ * @category Validation
  * @function isEmpty
  * @param value - The variable to check
  * @returns {boolean} True if the value is empty, false otherwise
@@ -165,6 +173,7 @@ function isEmpty(value: unknown): boolean {
 
 /**
  * Check if the variable is of the chosen type
+ * @category Validation
  * @function isType
  * @param value - The variable to check
  * @param type - The type you want
@@ -181,6 +190,7 @@ function isType(value: unknown, type: string): boolean {
 
 /**
  * Check if an email is valid
+ * @category Validation
  * @function isEmail
  * @param email - The email to check
  * @returns {boolean} True if the email is valid, false otherwise
@@ -197,6 +207,7 @@ function isEmail(email: string): boolean {
 
 /**
  * Check if a URL is valid
+ * @category Validation
  * @function isURL
  * @param url - The URL to check
  * @returns {boolean} True if the URL is valid, false otherwise
@@ -223,6 +234,7 @@ function isURL(url: string): boolean {
 
 /**
  * Create a deep clone of any object or array
+ * @category Object Manipulation
  * @function deepClone
  * @param obj - The object or array to clone
  * @returns A deep clone of the object
@@ -248,6 +260,7 @@ function deepClone<T>(obj: T): T {
 
 /**
  * Remove duplicate values from an array
+ * @category Object Manipulation
  * @function noTwins
  * @param arr - The array to remove duplicates from
  * @returns {unknown[]} A new array with unique values only
@@ -262,12 +275,13 @@ function noTwins(arr: unknown[]): unknown[] {
 
 /**
  * 
- * Transforamtion utilites
+ * Transformation utilites
  * 
  */
 
 /**
  * Transform a string to camelCase format
+ * @category Transformation
  * @function camelify
  * @param str - The string to transform
  * @returns {string} The string in camelCase format
@@ -293,6 +307,7 @@ function camelify(str: string): string {
 
 /**
  * Transform a string to kebab-case format
+ * @category Transformation
  * @function kebabify
  * @param str - The string to transform
  * @returns {string} The string in kebab-case format
@@ -314,6 +329,7 @@ function kebabify(str: string): string {
 
 /**
  * Transform a string to snake_case format
+ * @category Transformation
  * @function snakify
  * @param str - The string to transform
  * @returns {string} The string in snake_case format
@@ -335,6 +351,7 @@ function snakify(str: string): string {
 
 /**
  * Capitalize the first character of a string
+ * @category Transformation
  * @function capitalize
  * @param str - The string to capitalize
  * @returns {string} The string with the first character in uppercase

@@ -4,6 +4,8 @@ Un package JavaScript rempli d'utilitaires pour rendre votre code **lisible af**
 
 📖 **Languages** : [🇬🇧 English](README.md) | [🇫🇷 Français](#)
 
+📚 **[Documentation Complète](https://froostdev.github.io/clear-af.js/)**
+
 ---
 
 ## 📦 Installation
