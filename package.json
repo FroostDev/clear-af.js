@@ -24,9 +24,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "typedoc --out docs src"
   },
   "devDependencies": {
+    "typedoc": "^0.28.18",
     "typescript": "^6.0.2"
   }
 }
