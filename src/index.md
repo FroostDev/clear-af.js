@@ -28,3 +28,9 @@ A JavaScript package to make your code readable af.
 - {@link kebabify}
 - {@link snakify}
 - {@link capitalize}
+
+## Date & Time Functions
+
+- {@link DateParam}
+- {@link dayAgo}
+- {@link formatDate}

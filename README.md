@@ -90,6 +90,10 @@ clear.capitalize("hello");       // "Hello"
 - `snakify(string)`
 - `capitalize(string)`
 
+### Date & Time
+- `dayAgo(DateParam)`
+- `formatDate(DateParam)`
+
 ---
 
 ## 🤔 FAQ
