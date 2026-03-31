@@ -32,5 +32,6 @@ Object.defineProperty(exports, "prettyDebug", { enumerable: true, get: function 
 Object.defineProperty(exports, "logSeparator", { enumerable: true, get: function () { return logging_1.logSeparator; } });
 Object.defineProperty(exports, "logHeader", { enumerable: true, get: function () { return logging_1.logHeader; } });
 __exportStar(require("./validation"), exports);
+__exportStar(require("./date"), exports);
 __exportStar(require("./transformation"), exports);
 __exportStar(require("./object_manipulation"), exports);
