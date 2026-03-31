@@ -1,6 +1,6 @@
 {
   "name": "clear-af.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Make your code readable af with zero bullsh*t utilities.",
   "keywords": [
     "javascript",
@@ -32,5 +32,9 @@
   "devDependencies": {
     "typedoc": "^0.28.18",
     "typescript": "^6.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }
